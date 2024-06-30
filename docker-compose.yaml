@@ -1,10 +1,12 @@
 version: '3'
 services:
-  nightCrows:
+  apiData:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nightcrows-price
+    image: oppen-bingo-back
     ports:
-      - '8090:8090'
-    restart: unless-stopped
+      - '8080:8080'
+    environment:
+      - ADDITIONAL_OPTS=-Doracle.jdbc.timezoneAsRegion=false -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+    restart: always
