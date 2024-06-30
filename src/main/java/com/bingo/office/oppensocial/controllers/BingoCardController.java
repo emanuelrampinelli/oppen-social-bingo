@@ -30,6 +30,7 @@ public class BingoCardController {
 
     @Autowired
     private BingoCardRepository bingoCardRepository;
+    
     @PostMapping
     public ResponseEntity<BingoCardResponseDTO> save(@RequestBody @Valid BingoCardRequestDTO bingoCardRequestDTO){
 
